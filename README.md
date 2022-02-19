@@ -2,7 +2,7 @@
 # Modificateur et optimiseur Roblox
 Grâce à roTweaker, vous allez pouvoir gagner des FPS en jeu, mais aussi accéder à des fonctionnalités supplémentaires Roblox.
 ## Fonctionnalités
-- Optmise votre jeu<
+- Optmise votre jeu
 - Débloque des fonctionnalités cachés de Roblox
 - Répare votre jeu (dans certains cas)
 ## Aperçus
