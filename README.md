@@ -6,5 +6,4 @@ Grâce à roTweaker, vous allez pouvoir gagner des FPS en jeu, mais aussi accéd
 - Débloque des fonctionnalités cachés de Roblox
 - Répare votre jeu (dans certains cas)
 ## Aperçus
-![](https://github.com/Luckyluka17/roTweaker/blob/main/image%20(1).png)
-![](https://github.com/Luckyluka17/roTweaker/blob/main/image.png)
+<img align="center" src="https://github.com/Luckyluka17/roTweaker/blob/main/image%20(1).png">
