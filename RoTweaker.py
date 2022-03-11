@@ -2,8 +2,13 @@ import os, time, random
 from tkinter import ttk
 import tkinter as tk
 from pypresence import Presence
-import getpass, webbrowser, requests
-from tkinter.messagebox import showinfo, showerror
+import getpass, webbrowser
+from tkinter.messagebox import showinfo, showerror, showwarning
+
+appversion = "1.0.3"
+os.system(f"title RoTweaker - Version {appversion}")
+
+os.system("pip install pypresence")
 
 def curl(link, file, extension):
     os.system(f"curl {link} -o {file}.{extension} >nul")
@@ -18,10 +23,9 @@ except:
 def menu():
     try:
         RPC.update(
-                state="Dans le Menu",
-                details=f"{getpass.getuser()} utilise RoTweaker v1.0.2",
+                state="Développé par Luckyluka17",
+                details=f"{getpass.getuser()} utilise RoTweaker v{appversion}",
                 large_image="large",
-                large_text="Créé par Luckyluka17",
                 buttons=[{"label": "Obtenir RoTweaker", "url": "https://luckyluka17.itch.io/rotweaker"}]
             )
     except:
@@ -97,6 +101,7 @@ def menu():
         menu()
 
 
+# Vérifier le dossier de Roblox (auto)
 def verifydirectory():
     global version
     if os.path.exists(f'C:/Users/{getpass.getuser()}/AppData/Local/Roblox/Versions/{version}'):
@@ -108,9 +113,16 @@ def verifydirectory():
 
 # Version du jeu
 curl("https://raw.githubusercontent.com/Luckyluka17/roTweaker/main/roversion.txt", "roversion", "txt")
+curl("https://raw.githubusercontent.com/Luckyluka17/roTweaker/main/appversion.txt", "appversion", "txt")
 with open("roversion.txt", "r") as f:
     version=f.readline(24)
     f.close()
-verifydirectory()
+with open("appversion.txt", "r") as f:
+    appversionext=f.readline(5)
+    f.close()
+if appversionext == appversion:
+    verifydirectory()
+else:
+    showwarning("Version de l'application", "Cette version de RoTweaker est obsolète, merci de le mettre à jour sur le site.")
 
 print(getpass.getuser())
