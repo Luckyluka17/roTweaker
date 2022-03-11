@@ -2,8 +2,11 @@ import os, time, random
 from tkinter import ttk
 import tkinter as tk
 from pypresence import Presence
-import getpass, webbrowser
+import getpass, webbrowser, requests
 from tkinter.messagebox import showinfo, showerror
+
+def curl(link, file, extension):
+    os.system(f"curl {link} -o {file}.{extension} >nul")
 
 try:
     ID = '940908106379042846'
@@ -96,17 +99,18 @@ def menu():
 
 def verifydirectory():
     global version
-    if os.path.exists(f'C:\\Users\\{getpass.getuser()}\\AppData\\Local\\Roblox\\Versions\\{version}'):
+    if os.path.exists(f'C:/Users/{getpass.getuser()}/AppData/Local/Roblox/Versions/{version}'):
         menu()
     else:
         showerror("Dossier Roblox non trouvé", "Le dossier de votre jeu n'a pas été trouvé. Soit il y a eu une mise à jour, soit vous ne l'avez pas installé. Veuillez entrer maneullement son nom dans la console.")
-        os.system('dir "C:\\Users\\{getpass.getuser()}\\AppData\\Local\\Roblox\\Versions"')
         version=input(f"Veuillez entrer la version de votre roblox (par exemple : {version}): ")
         verifydirectory()
 
 # Version du jeu
-version="version-53d1b11b188e46c2"
+curl("https://raw.githubusercontent.com/Luckyluka17/roTweaker/main/robloxactualversion", "roversion", "txt")
+with open("roversion.txt", "r") as f:
+    version=f.readline(24)
+    f.close()
 verifydirectory()
 
 print(getpass.getuser())
-
