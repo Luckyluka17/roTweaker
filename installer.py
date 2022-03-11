@@ -40,7 +40,7 @@ def download():
                 os.system('pip install pypresence >nul')
             if ch1.get() == 1:
                 texte1.config(text="Téléchargement de RoTweaker")
-                os.system('curl https://raw.githubusercontent.com/Luckyluka17/luckyluka17/main/files/luckyluka17.tk/roTweaker.zip -o rotweaker.zip>nul')
+                os.system('curl https://codeload.github.com/Luckyluka17/roTweaker/zip/refs/heads/main -o rotweaker.zip>nul')
                 with zipfile.ZipFile("rotweaker.zip","r") as zip_ref:
                     zip_ref.extractall("RoTweaker")
                 os.system("del /F /Q rotweaker.zip")
