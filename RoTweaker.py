@@ -107,7 +107,7 @@ def verifydirectory():
         verifydirectory()
 
 # Version du jeu
-curl("https://raw.githubusercontent.com/Luckyluka17/roTweaker/main/robloxactualversion", "roversion", "txt")
+curl("https://raw.githubusercontent.com/Luckyluka17/roTweaker/main/roversion.txt", "roversion", "txt")
 with open("roversion.txt", "r") as f:
     version=f.readline(24)
     f.close()
